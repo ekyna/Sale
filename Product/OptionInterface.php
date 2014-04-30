@@ -23,7 +23,7 @@ interface OptionInterface extends PriceableInterface, ReferenceableInterface, We
     /**
      * Returns the group.
      *
-     * @return OptionGroup
+     * @return string
      */
     public function getGroup();
 }
