@@ -3,7 +3,7 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * ReferenceableTrait
+ * ReferenceableTrait.
  *
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
@@ -20,10 +20,10 @@ trait ReferenceableTrait
     protected $reference;
 
     /**
-     * Set designation
+     * Sets the designation.
      *
      * @param string $designation
-     * @return Sellable
+     * @return \Ekyna\Component\Sale\ReferenceableInterface
      */
     public function setDesignation($designation)
     {
@@ -33,7 +33,7 @@ trait ReferenceableTrait
     }
 
     /**
-     * Get designation
+     * Returns the designation.
      *
      * @return string
      */
@@ -43,10 +43,10 @@ trait ReferenceableTrait
     }
 
     /**
-     * Set reference
+     * Sets the reference.
      *
      * @param string $reference
-     * @return Sellable
+     * @return \Ekyna\Component\Sale\ReferenceableInterface
      */
     public function setReference($reference)
     {
@@ -56,7 +56,7 @@ trait ReferenceableTrait
     }
 
     /**
-     * Get reference
+     * Returns the reference.
      *
      * @return string
      */

@@ -3,7 +3,7 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * PriceableTrait
+ * PriceableTrait.
  *
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
@@ -28,7 +28,7 @@ trait PriceableTrait
 	 * 
      * @param number $price
      * 
-     * @return Priceable
+     * @return \Ekyna\Component\Sale\PriceableInterface
      */
     public function setPrice($price)
     {
@@ -48,7 +48,7 @@ trait PriceableTrait
     }
 
     /**
-     * Returns the "all taxes excluded" price
+     * Returns the "all taxes excluded" price.
      * 
      * @return float
      */
@@ -58,7 +58,7 @@ trait PriceableTrait
     }
     
     /**
-     * Returns the "all taxes included" price
+     * Returns the "all taxes included" price.
      *
      * @return float
      */
@@ -68,7 +68,7 @@ trait PriceableTrait
     }
 
     /**
-     * Returns the tax amount
+     * Returns the tax amount.
      *
      * @return float
      */
@@ -94,7 +94,7 @@ trait PriceableTrait
 	 * 
      * @param \Ekyna\Component\Sale\TaxInterface $tax
      * 
-     * @return Priceable
+     * @return \Ekyna\Component\Sale\PriceableInterface
      */
     public function setTax(TaxInterface $tax)
     {

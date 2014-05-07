@@ -56,7 +56,7 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     public function getOptionsIds();
 
     /**
-     * Returns wether the OrderItem equals the given OrderItem or not.
+     * Returns whether the OrderItem equals the given OrderItem or not.
      * 
      * @param \Ekyna\Bundle\OrderBundle\Model\OrderItemInterface $orderItem
      * 

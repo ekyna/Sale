@@ -9,6 +9,10 @@ namespace Ekyna\Component\Sale\Order;
  */
 interface OrderInterface
 {
+    const TYPE_ORDER = 'order';
+    const TYPE_CART  = 'cart';
+    const TYPE_QUOTE = 'quote1';
+
     /**
      * Returns the number.
      *
@@ -31,6 +35,13 @@ interface OrderInterface
     public function getTotalWeight();
 
     /**
+     * Returns the currency.
+     *
+     * @return string
+     */
+    public function getCurrency();
+
+    /**
      * Returns the "all taxes excluded" total.
      *
      * @return float
@@ -45,18 +56,39 @@ interface OrderInterface
     public function getAtiTotal();
 
     /**
-     * Get status.
+     * Returns the type.
      *
-     * @return integer
+     * @return string
      */
-    public function getStatus();
+    public function getType();
 
     /**
-     * Returns the "expires at" datetime.
+     * Returns whether the order is locked.
      *
-     * @return \DateTime
+     * @return boolean
      */
-    public function getExpiresAt();
+    public function getLocked();
+
+    /**
+     * Returns the state.
+     *
+     * @return string
+     */
+    public function getState();
+
+    /**
+     * Returns the payment state.
+     * 
+     * @return string
+     */
+    public function getPaymentState();
+
+    /**
+     * Returns the shipment state.
+     * 
+     * @return string
+     */
+    public function getShipmentState();
 
     /**
      * Returns the "completed at" datetime.
@@ -94,12 +126,12 @@ interface OrderInterface
     public function getItems();
 
     /**
-     * Returns wether the order requires shipment (has physical items)
+     * Returns whether the order requires shipment (has physical items)
      */
     public function requiresShipment();
     
     /**
-     * Returns wether the order has items or not
+     * Returns whether the order has items or not
      *
      * @return boolean
      */
@@ -125,4 +157,18 @@ interface OrderInterface
      * @return \Ekyna\Bundle\UserBundle\Model\AddressInterface
      */
     public function getDeliveryAddress();
+
+    /**
+     * Returns the payments.
+     * 
+     * @return \Ekyna\Sale\Payment\PaymentInterface[]
+     */
+    public function getPayments();
+
+    /**
+     * Returns the shipments.
+     * 
+     * @return \Ekyna\Sale\Shipment\ShipmentInterface[]
+     */
+    public function getShipments();
 }

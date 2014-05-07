@@ -3,7 +3,7 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * PriceableInterface
+ * PriceableInterface.
  *
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
@@ -17,21 +17,21 @@ interface PriceableInterface
     public function getPrice();
 
     /**
-     * Returns the "all taxes included" price
+     * Returns the "all taxes included" price.
      * 
      * @return float
      */
     public function getAtiPrice();
 
     /**
-     * Returns the tax amount
+     * Returns the tax amount.
      * 
      * @return float
      */
     public function getTaxAmount();
 
     /**
-     * Returns the taxes amounts
+     * Returns the taxes amounts.
      * 
      * @return array
      */
