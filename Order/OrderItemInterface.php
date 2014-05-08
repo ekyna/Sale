@@ -70,6 +70,13 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     public function merge(OrderItemInterface $orderItem);
 
     /**
+     * Returns the extra datas.
+     * 
+     * @return array
+     */
+    public function getExtras();
+
+    /**
      * Returns the "all taxes excluded" price (including options)
      *
      * @return float
