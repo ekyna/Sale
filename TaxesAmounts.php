@@ -15,11 +15,17 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
     protected $taxes;
 
     /**
+     * @var float
+     */
+    protected $total;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->taxes = array();
+        $this->total = 0;
     }
 
     /**
@@ -29,6 +35,8 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
      */
     public function addTaxAmount(TaxAmount $taxAmount)
     {
+        $this->total += $taxAmount->getAmount();
+
         foreach ($this->taxes as $tax) {
             if ($tax->getTax() == $taxAmount->getTax()) {
                 $tax->addAmount($taxAmount->getAmount());
@@ -40,11 +48,21 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
     }
 
     /**
+     * Returns the total amount of all taxes.
+     * 
+     * @return float
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+    
+    /**
      * @param offset
      */
     public function offsetExists($offset)
     {
-    	return array_key_exists($this->taxes, $offset);
+    	return array_key_exists($offset, $this->taxes);
     }
 
     /**
