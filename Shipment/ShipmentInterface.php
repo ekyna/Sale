@@ -26,14 +26,14 @@ interface ShipmentInterface
     /**
      * Returns the "created at" datetime.
      *
-     * @return \Datetime
+     * @return \DateTime
      */
     public function getCreatedAt();
 
     /**
      * Returns the "updated at" datetime.
      *
-     * @return \Datetime
+     * @return \DateTime
      */
     public function getUpdatedAt();
 }

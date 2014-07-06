@@ -119,6 +119,22 @@ interface OrderInterface
     public function getDeletedAt();
 
     /**
+     * Adds an item.
+     *
+     * @param \Ekyna\Component\Sale\Order\OrderItemInterface $orderItem
+     *
+     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     */
+    public function addItem(OrderItemInterface $orderItem);
+
+    /**
+     * Removes the item.
+     *
+     * @param \Ekyna\Component\Sale\Order\OrderItemInterface $orderItem
+     */
+    public function removeItem(OrderItemInterface $orderItem);
+
+    /**
      * Returns the items.
      *
      * @return \Doctrine\Common\Collections\Collection
