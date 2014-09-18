@@ -23,7 +23,7 @@ trait ReferenceableTrait
      * Sets the designation.
      *
      * @param string $designation
-     * @return \Ekyna\Component\Sale\ReferenceableInterface
+     * @return \Ekyna\Component\Sale\ReferenceableInterface|$this
      */
     public function setDesignation($designation)
     {
@@ -46,7 +46,7 @@ trait ReferenceableTrait
      * Sets the reference.
      *
      * @param string $reference
-     * @return \Ekyna\Component\Sale\ReferenceableInterface
+     * @return \Ekyna\Component\Sale\ReferenceableInterface|$this
      */
     public function setReference($reference)
     {

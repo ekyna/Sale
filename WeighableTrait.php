@@ -19,7 +19,7 @@ trait WeighableTrait
      * 
      * @param float $weight
      * 
-     * @return \Ekyna\Component\Sale\WeighableInterface
+     * @return \Ekyna\Component\Sale\WeighableInterface|$this
      */
     public function setWeight($weight)
     {

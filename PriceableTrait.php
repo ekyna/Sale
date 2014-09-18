@@ -28,7 +28,7 @@ trait PriceableTrait
 	 * 
      * @param number $price
      * 
-     * @return \Ekyna\Component\Sale\PriceableInterface
+     * @return \Ekyna\Component\Sale\PriceableInterface|$this
      */
     public function setPrice($price)
     {
@@ -94,7 +94,7 @@ trait PriceableTrait
 	 * 
      * @param \Ekyna\Component\Sale\TaxInterface $tax
      * 
-     * @return \Ekyna\Component\Sale\PriceableInterface
+     * @return \Ekyna\Component\Sale\PriceableInterface|$this
      */
     public function setTax(TaxInterface $tax)
     {
