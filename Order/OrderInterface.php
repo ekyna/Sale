@@ -193,6 +193,14 @@ interface OrderInterface
     public function getUser();
 
     /**
+     * Sets the user.
+     *
+     * @param \Ekyna\Bundle\UserBundle\Model\UserInterface $user
+     * @return mixed
+     */
+    public function setUser(\Ekyna\Bundle\UserBundle\Model\UserInterface $user = null);
+
+    /**
      * Returns the invoice address.
      *
      * @return \Ekyna\Bundle\UserBundle\Model\AddressInterface
@@ -205,6 +213,15 @@ interface OrderInterface
      * @return \Ekyna\Bundle\UserBundle\Model\AddressInterface
      */
     public function getDeliveryAddress();
+
+    /**
+     * Adds a payment.
+     *
+     * @param \Ekyna\Component\Sale\Order\OrderPaymentInterface $orderPayment
+     *
+     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     */
+    public function addPayment(OrderPaymentInterface $orderPayment);
 
     /**
      * Returns the payments.
