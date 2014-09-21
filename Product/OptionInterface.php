@@ -16,7 +16,7 @@ interface OptionInterface extends PriceableInterface, ReferenceableInterface, We
     /**
      * Returns the product.
      *
-     * @return \Ekyna\Component\Sale\Product\ProductInterface
+     * @return ProductInterface
      */
     public function getProduct();
 

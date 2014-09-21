@@ -11,7 +11,7 @@ interface OrderInterface
 {
     const TYPE_ORDER = 'order';
     const TYPE_CART  = 'cart';
-    const TYPE_QUOTE = 'quote1';
+    const TYPE_QUOTE = 'quote';
 
     /**
      * Returns the number.
@@ -19,6 +19,14 @@ interface OrderInterface
      * @return string
      */
     public function getNumber();
+
+    /**
+     * Sets the number.
+     *
+     * @param $number
+     * @return OrderInterface|$this
+     */
+    public function setNumber($number);
 
     /**
      * Returns the items count.
@@ -63,11 +71,27 @@ interface OrderInterface
     public function getType();
 
     /**
+     * Sets the type.
+     *
+     * @param $type
+     * @return OrderInterface|$this
+     */
+    public function setType($type);
+
+    /**
      * Returns whether the order is locked.
      *
      * @return boolean
      */
     public function getLocked();
+
+    /**
+     * Sets whether the order is locked or not.
+     *
+     * @param boolean $locked
+     * @return OrderInterface|$this
+     */
+    public function setLocked($locked);
 
     /**
      * Returns the state.
@@ -103,6 +127,14 @@ interface OrderInterface
      * @return \DateTime
      */
     public function getCreatedAt();
+
+    /**
+     * Sets the "created at" datetime.
+     *
+     * @param \DateTime $createdAt
+     * @return OrderInterface|$this
+     */
+    public function setCreatedAt(\DateTime $createdAt);
 
     /**
      * Returns the "updated at" datetime.
@@ -177,14 +209,14 @@ interface OrderInterface
     /**
      * Returns the payments.
      * 
-     * @return \Ekyna\Sale\Payment\PaymentInterface[]
+     * @return \Doctrine\Common\Collections\ArrayCollection|\Ekyna\Component\Sale\Payment\PaymentInterface[]
      */
     public function getPayments();
 
     /**
      * Returns the shipments.
      * 
-     * @return \Ekyna\Sale\Shipment\ShipmentInterface[]
+     * @return \Doctrine\Common\Collections\ArrayCollection|\Ekyna\Component\Sale\Shipment\ShipmentInterface[]
      */
     public function getShipments();
 }
