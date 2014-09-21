@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale\Payment;
 
 /**
- * PaymentInterface.
- *
+ * Interface PaymentInterface
+ * @package Ekyna\Component\Sale\Payment
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 interface PaymentInterface

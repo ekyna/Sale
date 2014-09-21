@@ -3,11 +3,11 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * Weighable.
- *
+ * Interface WeightableInterface
+ * @package Ekyna\Component\Sale
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface WeighableInterface
+interface WeightableInterface
 {
     /**
      * Returns the weight.

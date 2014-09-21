@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale\Order;
 
 /**
- * OrderInterface.
- *
+ * Interface OrderInterface
+ * @package Ekyna\Component\Sale\Order
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 interface OrderInterface
@@ -153,23 +153,23 @@ interface OrderInterface
     /**
      * Adds an item.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderItemInterface $orderItem
+     * @param OrderItemInterface $orderItem
      *
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @return OrderInterface|$this
      */
     public function addItem(OrderItemInterface $orderItem);
 
     /**
      * Removes the item.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderItemInterface $orderItem
+     * @param OrderItemInterface $orderItem
      */
     public function removeItem(OrderItemInterface $orderItem);
 
     /**
      * Returns the items.
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\ArrayCollection|OrderItemInterface[]
      */
     public function getItems();
 

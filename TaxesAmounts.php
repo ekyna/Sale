@@ -3,14 +3,14 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * TaxesAmount.
- *
+ * Class TaxesAmounts
+ * @package Ekyna\Component\Sale
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
 {
     /**
-     * @var array
+     * @var array|TaxAmount[]
      */
     protected $taxes;
 
@@ -58,7 +58,7 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
     }
     
     /**
-     * @param offset
+     * {@inheritdoc}
      */
     public function offsetExists($offset)
     {
@@ -66,7 +66,7 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
     }
 
     /**
-     * @param offset
+     * {@inheritdoc}
      */
     public function offsetGet($offset)
     {
@@ -74,8 +74,7 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
     }
 
     /**
-     * @param offset
-     * @param value
+     * {@inheritdoc}
      */
     public function offsetSet($offset, $value)
     {
@@ -87,7 +86,7 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
     }
 
     /**
-     * @param offset
+     * {@inheritdoc}
      */
     public function offsetUnset($offset)
     {
@@ -107,7 +106,7 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
     /**
      * Merges two TaxesAmounts objects
      * 
-     * @param TaxesAmounts $taxesAmoounts
+     * @param TaxesAmounts $taxesAmounts
      */
     public function merge(TaxesAmounts $taxesAmounts)
     {

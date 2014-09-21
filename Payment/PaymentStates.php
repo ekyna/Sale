@@ -2,11 +2,6 @@
 
 namespace Ekyna\Component\Sale\Payment;
 
-/**
- * PaymentStates.
- *
- * @author Étienne Dauvergne <contact@ekyna.com>
- */
 final class PaymentStates
 {
     const STATE_NEW        = 'new';
@@ -18,4 +13,9 @@ final class PaymentStates
     const STATE_COMPLETED  = 'completed';
     const STATE_REFUNDED   = 'refunded';
     const STATE_UNKNOWN    = 'unknown';
+
+    function __call($name, $arguments)
+    {
+        // TODO: Implement __call() method.
+    }
 }

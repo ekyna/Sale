@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * ReferenceableInterface.
- *
+ * Interface ReferenceableInterface
+ * @package Ekyna\Component\Sale
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 interface ReferenceableInterface

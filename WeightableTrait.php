@@ -3,11 +3,11 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * WeighableTrait.
- *
+ * Class WeightableTrait
+ * @package Ekyna\Component\Sale
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-trait WeighableTrait
+trait WeightableTrait
 {
     /**
      * @var float
@@ -19,7 +19,7 @@ trait WeighableTrait
      * 
      * @param float $weight
      * 
-     * @return \Ekyna\Component\Sale\WeighableInterface|$this
+     * @return \Ekyna\Component\Sale\WeightableInterface|$this
      */
     public function setWeight($weight)
     {

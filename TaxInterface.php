@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * TaxInterface.
- *
+ * Interface TaxInterface
+ * @package Ekyna\Component\Sale
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 interface TaxInterface

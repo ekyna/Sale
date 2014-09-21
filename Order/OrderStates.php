@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale\Order;
 
 /**
- * OrderStates.
- *
+ * Class OrderStates
+ * @package Ekyna\Component\Sale\Order
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 final class OrderStates

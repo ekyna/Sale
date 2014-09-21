@@ -5,8 +5,8 @@ namespace Ekyna\Component\Sale\Order;
 use Ekyna\Component\Sale\Payment\PaymentInterface;
 
 /**
- * OrderPaymentInterface.
- *
+ * Interface OrderPaymentInterface
+ * @package Ekyna\Component\Sale\Order
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 interface OrderPaymentInterface extends PaymentInterface

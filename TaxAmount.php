@@ -2,6 +2,11 @@
 
 namespace Ekyna\Component\Sale;
 
+/**
+ * Class TaxAmount
+ * @package Ekyna\Component\Sale
+ * @author Étienne Dauvergne <contact@ekyna.com>
+ */
 class TaxAmount
 {
     /**
@@ -18,7 +23,7 @@ class TaxAmount
      * Constructor
      * 
      * @param TaxInterface $tax
-     * @param float        $amount
+     * @param $amount
      */
     public function __construct(TaxInterface $tax, $amount = 0)
     {

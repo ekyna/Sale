@@ -4,14 +4,14 @@ namespace Ekyna\Component\Sale\Product;
 
 use Ekyna\Component\Sale\PriceableInterface;
 use Ekyna\Component\Sale\ReferenceableInterface;
-use Ekyna\Component\Sale\WeighableInterface;
+use Ekyna\Component\Sale\WeightableInterface;
 
 /**
- * OptionInterface.
- *
+ * Interface OptionInterface
+ * @package Ekyna\Component\Sale\Product
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface OptionInterface extends PriceableInterface, ReferenceableInterface, WeighableInterface
+interface OptionInterface extends PriceableInterface, ReferenceableInterface, WeightableInterface
 {
     /**
      * Returns the product.

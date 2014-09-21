@@ -5,8 +5,8 @@ namespace Ekyna\Component\Sale\Order;
 use Ekyna\Component\Sale\Shipment\ShipmentInterface;
 
 /**
- * OrderShipmentInterface.
- *
+ * Interface OrderShipmentInterface
+ * @package Ekyna\Component\Sale\Order
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 interface OrderShipmentInterface extends ShipmentInterface

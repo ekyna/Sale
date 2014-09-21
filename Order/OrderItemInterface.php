@@ -4,14 +4,14 @@ namespace Ekyna\Component\Sale\Order;
 
 use Ekyna\Component\Sale\PriceableInterface;
 use Ekyna\Component\Sale\ReferenceableInterface;
-use Ekyna\Component\Sale\WeighableInterface;
+use Ekyna\Component\Sale\WeightableInterface;
 
 /**
- * OrderItemInterface.
- * 
+ * Interface OrderItemInterface
+ * @package Ekyna\Component\Sale\Order
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface OrderItemInterface extends PriceableInterface, ReferenceableInterface, WeighableInterface
+interface OrderItemInterface extends PriceableInterface, ReferenceableInterface, WeightableInterface
 {
     /**
      * Returns the quantity.
@@ -30,21 +30,21 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     /**
      * Returns the order.
      *
-     * @return \Ekyna\Bundle\OrderBundle\Model\OrderInterface
+     * @return OrderInterface
      */
     public function getOrder();
 
     /**
      * Returns the product.
      *
-     * @return \Ekyna\Bundle\ProductBundle\Model\ProductInterface
+     * @return \Ekyna\Component\Sale\Product\ProductInterface
      */
     public function getProduct();
 
     /**
      * Returns the options.
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection|OrderItemOptionInterface[]
      */
     public function getOptions();
 
@@ -58,7 +58,7 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     /**
      * Returns whether the OrderItem equals the given OrderItem or not.
      * 
-     * @param \Ekyna\Bundle\OrderBundle\Model\OrderItemInterface $orderItem
+     * @param OrderItemInterface $orderItem
      * 
      * @return boolean
      */
@@ -128,7 +128,7 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     /**
      * Returns the total tax amount
      *
-     * @return \Ekyna\Component\Sale\TaxesAmount
+     * @return \Ekyna\Component\Sale\TaxesAmounts
      */
     public function getTotalTaxesAmounts();
 

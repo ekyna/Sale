@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * Tax
- *
+ * Class Tax
+ * @package Ekyna\Component\Sale
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 class Tax implements TaxInterface

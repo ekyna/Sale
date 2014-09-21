@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * ReferenceableTrait.
- *
+ * Class ReferenceableTrait
+ * @package Ekyna\Component\Sale
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 trait ReferenceableTrait

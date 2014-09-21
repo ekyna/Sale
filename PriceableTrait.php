@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale;
 
 /**
- * PriceableTrait.
- *
+ * Class PriceableTrait
+ * @package Ekyna\Component\Sale
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 trait PriceableTrait

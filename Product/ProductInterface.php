@@ -4,14 +4,14 @@ namespace Ekyna\Component\Sale\Product;
 
 use Ekyna\Component\Sale\PriceableInterface;
 use Ekyna\Component\Sale\ReferenceableInterface;
-use Ekyna\Component\Sale\WeighableInterface;
+use Ekyna\Component\Sale\WeightableInterface;
 
 /**
- * ProductInterface.
- *
+ * Interface ProductInterface
+ * @package Ekyna\Component\Sale\Product
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface ProductInterface extends PriceableInterface, ReferenceableInterface, WeighableInterface
+interface ProductInterface extends PriceableInterface, ReferenceableInterface, WeightableInterface
 {
     /**
      * Returns the type.
@@ -23,14 +23,14 @@ interface ProductInterface extends PriceableInterface, ReferenceableInterface, W
     /**
      * Returns the options
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\ArrayCollection|OptionInterface[]
      */
     public function getOptions();
 
     /**
      * Returns the options's groups.
      * 
-     * @return \Doctrine\Common\Collections\Collection
+     * @return array
      */
     public function getOptionsGroups();
 }
