@@ -14,6 +14,13 @@ interface OrderInterface
     const TYPE_QUOTE = 'quote';
 
     /**
+     * Returns the id.
+     *
+     * @return int
+     */
+    public function getId();
+
+    /**
      * Returns the number.
      *
      * @return string
@@ -62,6 +69,34 @@ interface OrderInterface
      * @return float
      */
     public function getAtiTotal();
+
+    /**
+     * Returns the taxes amounts.
+     *
+     * @return \Ekyna\Component\Sale\TaxesAmounts
+     */
+    public function getTaxesAmounts();
+
+    /**
+     * Returns the all taxes excluded shipping cost.
+     *
+     * @return float
+     */
+    public function getNetShippingCost();
+
+    /**
+     * Returns the all taxes included shipping cost.
+     *
+     * @return mixed
+     */
+    public function getAtiShippingCost();
+
+    /**
+     * Returns the shipping cost taxes amount.
+     *
+     * @return float
+     */
+    public function getShippingTaxAmount();
 
     /**
      * Returns the type.

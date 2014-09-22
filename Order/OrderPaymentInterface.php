@@ -19,9 +19,18 @@ interface OrderPaymentInterface extends PaymentInterface
     public function getId();
 
     /**
+     * Sets the order.
+     *
+     * @param OrderInterface $order
+     *
+     * @return OrderPaymentInterface|$this
+     */
+    public function setOrder(OrderInterface $order = null);
+
+    /**
      * Returns the order.
      * 
-     * @return \Ekyna\Component\Sale\Order\OrderInterface
+     * @return OrderInterface
      */
     public function getOrder();
 }

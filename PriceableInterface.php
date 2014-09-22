@@ -17,6 +17,13 @@ interface PriceableInterface
     public function getPrice();
 
     /**
+     * Returns the "all taxes excluded" price.
+     *
+     * @return float
+     */
+    public function getNetPrice();
+
+    /**
      * Returns the "all taxes included" price.
      * 
      * @return float

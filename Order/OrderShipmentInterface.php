@@ -17,11 +17,20 @@ interface OrderShipmentInterface extends ShipmentInterface
      * @return integer
      */
     public function getId();
-    
+
+    /**
+     * Sets the order.
+     *
+     * @param OrderInterface $order
+     *
+     * @return OrderShipmentInterface|$this
+     */
+    public function setOrder(OrderInterface $order = null);
+
     /**
      * Returns the order.
      *
-     * @return \Ekyna\Component\Sale\Order\OrderInterface
+     * @return OrderInterface
     */
     public function getOrder();
 }

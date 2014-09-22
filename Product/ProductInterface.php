@@ -14,6 +14,13 @@ use Ekyna\Component\Sale\WeightableInterface;
 interface ProductInterface extends PriceableInterface, ReferenceableInterface, WeightableInterface
 {
     /**
+     * Returns the id.
+     *
+     * @return int
+     */
+    public function getId();
+
+    /**
      * Returns the type.
      * 
      * @return integer

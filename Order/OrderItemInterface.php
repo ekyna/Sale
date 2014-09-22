@@ -28,6 +28,15 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     public function getPosition();
 
     /**
+     * Sets the order.
+     *
+     * @param \Ekyna\Component\Sale\Order\OrderInterface $order
+     *
+     * @return OrderItemInterface
+     */
+    public function setOrder(OrderInterface $order = null);
+
+    /**
      * Returns the order.
      *
      * @return OrderInterface
@@ -44,7 +53,7 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     /**
      * Returns the options.
      *
-     * @return \Doctrine\Common\Collections\Collection|OrderItemOptionInterface[]
+     * @return \Doctrine\Common\Collections\ArrayCollection|OrderItemOptionInterface[]
      */
     public function getOptions();
 

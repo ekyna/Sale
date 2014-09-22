@@ -10,11 +10,33 @@ namespace Ekyna\Component\Sale\Payment;
 interface PaymentInterface
 {
     /**
+     * Returns the identifier.
+     *
+     * @return integer
+     */
+    public function getId();
+
+    /**
+     * Sets the amount.
+     *
+     * @param float $amount
+     * @return PaymentInterface|$this
+     */
+    public function setAmount($amount);
+
+    /**
      * Returns the amount.
-     * 
      * @return float
      */
     public function getAmount();
+
+    /**
+     * Sets the currency code.
+     *
+     * @param string $currency
+     * @return PaymentInterface|$this
+     */
+    public function setCurrency($currency);
 
     /**
      * Returns the currency code.
@@ -24,11 +46,27 @@ interface PaymentInterface
     public function getCurrency();
 
     /**
+     * Sets the state.
+     *
+     * @param string $state
+     * @return PaymentInterface|$this
+     */
+    public function setState($state);
+
+    /**
      * Returns the state.
      * 
      * @return string
      */
     public function getState();
+
+    /**
+     * Sets the method.
+     *
+     * @param string $method
+     * @return PaymentInterface|$this
+     */
+    public function setMethod($method);
 
     /**
      * Returns the method.
@@ -38,6 +76,15 @@ interface PaymentInterface
     public function getMethod();
 
     /**
+     * Sets the details.
+     *
+     * @param array $details
+     *
+     * @return PaymentInterface|$this
+     */
+    public function setDetails(array $details);
+
+    /**
      * Returns the details.
      * 
      * @return array
@@ -45,14 +92,30 @@ interface PaymentInterface
     public function getDetails();
 
     /**
-     * Returns the "created at" datetime.
+     * Sets the creation datetime.
+     *
+     * @param \DateTime $createdAt
+     * @return PaymentInterface|$this
+     */
+    public function setCreatedAt(\DateTime $createdAt);
+
+    /**
+     * Returns the creation datetime.
      * 
      * @return \DateTime
      */
     public function getCreatedAt();
 
     /**
-     * Returns the "updated at" datetime.
+     * Sets the update datetime.
+     *
+     * @param \DateTime $createdAt
+     * @return PaymentInterface|$this
+     */
+    public function setUpdatedAt(\DateTime $createdAt);
+
+    /**
+     * Returns the update datetime.
      * 
      * @return \DateTime
      */
