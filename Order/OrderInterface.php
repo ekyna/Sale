@@ -129,6 +129,14 @@ interface OrderInterface
     public function setLocked($locked);
 
     /**
+     * Sets the state.
+     *
+     * @param string $state
+     * @return OrderInterface|$this
+     */
+    public function setState($state);
+
+    /**
      * Returns the state.
      *
      * @return string
@@ -136,11 +144,27 @@ interface OrderInterface
     public function getState();
 
     /**
+     * Sets the payment state.
+     *
+     * @param string $paymentState
+     * @return OrderInterface|$this
+     */
+    public function setPaymentState($paymentState);
+
+    /**
      * Returns the payment state.
      * 
      * @return string
      */
     public function getPaymentState();
+
+    /**
+     * Sets the shipment state.
+     *
+     * @param string $shipmentState
+     * @return OrderInterface|$this
+     */
+    public function setShipmentState($shipmentState);
 
     /**
      * Returns the shipment state.
