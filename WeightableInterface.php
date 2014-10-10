@@ -10,6 +10,15 @@ namespace Ekyna\Component\Sale;
 interface WeightableInterface
 {
     /**
+     * Sets the weight.
+     *
+     * @param float $weight
+     *
+     * @return \Ekyna\Component\Sale\WeightableInterface|$this
+     */
+    public function setWeight($weight);
+
+    /**
      * Returns the weight.
      *
      * @return float

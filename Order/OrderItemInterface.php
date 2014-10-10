@@ -3,6 +3,7 @@
 namespace Ekyna\Component\Sale\Order;
 
 use Ekyna\Component\Sale\PriceableInterface;
+use Ekyna\Component\Sale\Product\ProductInterface;
 use Ekyna\Component\Sale\ReferenceableInterface;
 use Ekyna\Component\Sale\WeightableInterface;
 
@@ -13,12 +14,31 @@ use Ekyna\Component\Sale\WeightableInterface;
  */
 interface OrderItemInterface extends PriceableInterface, ReferenceableInterface, WeightableInterface
 {
+
+    /**
+     * Sets the quantity.
+     *
+     * @param integer $quantity
+     *
+     * @return OrderItemInterface|$this
+     */
+    public function setQuantity($quantity);
+
     /**
      * Returns the quantity.
      *
      * @return integer
      */
     public function getQuantity();
+
+    /**
+     * Sets the position.
+     *
+     * @param integer $position
+     *
+     * @return OrderItemInterface|$this
+     */
+    public function setPosition($position);
 
     /**
      * Returns the position.
@@ -32,7 +52,7 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
      *
      * @param \Ekyna\Component\Sale\Order\OrderInterface $order
      *
-     * @return OrderItemInterface
+     * @return OrderItemInterface|$this
      */
     public function setOrder(OrderInterface $order = null);
 
@@ -44,11 +64,36 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     public function getOrder();
 
     /**
+     * Sets the product.
+     *
+     * @param ProductInterface $product
+     *
+     * @return OrderItemInterface|$this
+     */
+    public function setProduct(ProductInterface $product = null);
+
+    /**
      * Returns the product.
      *
      * @return \Ekyna\Component\Sale\Product\ProductInterface
      */
     public function getProduct();
+
+    /**
+     * Adds an option.
+     *
+     * @param OrderItemOptionInterface $option
+     *
+     * @return OrderItemInterface|$this
+     */
+    public function addOption(OrderItemOptionInterface $option);
+
+    /**
+     * Removes an option.
+     *
+     * @param OrderItemOptionInterface $option
+     */
+    public function removeOption(OrderItemOptionInterface $option);
 
     /**
      * Returns the options.
@@ -77,6 +122,15 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
      * Merge quantity of the given OrderItem.
      */
     public function merge(OrderItemInterface $orderItem);
+
+    /**
+     * Sets the extra datas.
+     *
+     * @param integer $extras
+     *
+     * @return OrderItemInterface|$this
+     */
+    public function setExtras($extras);
 
     /**
      * Returns the extra datas.

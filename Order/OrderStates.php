@@ -15,4 +15,21 @@ final class OrderStates
     const STATE_ACCEPTED          = 'accepted';
     const STATE_COMPLETED         = 'completed';
     const STATE_CANCELLED         = 'cancelled';
+
+    /**
+     * Returns the valid states.
+     *
+     * @return array
+     */
+    public static function getStates()
+    {
+        return array(
+            self::STATE_NEW,
+            self::STATE_PENDING,
+            self::STATE_REFUSED,
+            self::STATE_ACCEPTED,
+            self::STATE_COMPLETED,
+            self::STATE_CANCELLED,
+        );
+    }
 }

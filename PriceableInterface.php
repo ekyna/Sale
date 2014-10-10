@@ -10,6 +10,15 @@ namespace Ekyna\Component\Sale;
 interface PriceableInterface
 {
     /**
+     * Sets the base price.
+     *
+     * @param number $price
+     *
+     * @return \Ekyna\Component\Sale\PriceableInterface|$this
+     */
+    public function setPrice($price);
+
+    /**
      * Returns the base price.
      * 
      * @return float
@@ -43,6 +52,15 @@ interface PriceableInterface
      * @return array
      */
     public function getTaxesAmounts();
+
+    /**
+     * Sets the tax.
+     *
+     * @param \Ekyna\Component\Sale\TaxInterface $tax
+     *
+     * @return \Ekyna\Component\Sale\PriceableInterface|$this
+     */
+    public function setTax(TaxInterface $tax);
 
     /**
      * Returns the tax.

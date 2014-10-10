@@ -2,6 +2,11 @@
 
 namespace Ekyna\Component\Sale\Payment;
 
+/**
+ * Class PaymentStates
+ * @package Ekyna\Component\Sale\Payment
+ * @author Étienne Dauvergne <contact@ekyna.com>
+ */
 final class PaymentStates
 {
     const STATE_NEW        = 'new';
@@ -14,8 +19,23 @@ final class PaymentStates
     const STATE_REFUNDED   = 'refunded';
     const STATE_UNKNOWN    = 'unknown';
 
-    function __call($name, $arguments)
+    /**
+     * Returns the valid states.
+     *
+     * @return array
+     */
+    public static function getStates()
     {
-        // TODO: Implement __call() method.
+        return array(
+            self::STATE_NEW,
+            self::STATE_PENDING,
+            self::STATE_PROCESSING,
+            self::STATE_CANCELLED,
+            self::STATE_FAILED,
+            self::STATE_SUCCESS,
+            self::STATE_COMPLETED,
+            self::STATE_REFUNDED,
+            self::STATE_UNKNOWN,
+        );
     }
 }

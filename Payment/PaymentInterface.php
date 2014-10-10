@@ -112,7 +112,7 @@ interface PaymentInterface
      * @param \DateTime $createdAt
      * @return PaymentInterface|$this
      */
-    public function setUpdatedAt(\DateTime $createdAt);
+    public function setUpdatedAt(\DateTime $createdAt = null);
 
     /**
      * Returns the update datetime.

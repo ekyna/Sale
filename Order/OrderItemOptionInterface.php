@@ -17,32 +17,32 @@ interface OrderItemOptionInterface extends PriceableInterface, ReferenceableInte
     /**
      * Sets the order item.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderItemInterface $orderItem
+     * @param OrderItemInterface $orderItem
      *
-     * @return OrderItemOptionInterface
+     * @return OrderItemOptionInterface|$this
      */
     public function setOrderItem(OrderItemInterface $orderItem = null);
 
     /**
      * Returns the order item.
      *
-     * @return \Ekyna\Component\Sale\Order\OrderItemInterface
+     * @return OrderItemInterface
      */
     public function getOrderItem();
 
     /**
      * Sets the option.
      *
-     * @param \Ekyna\Component\Sale\Product\OptionInterface $option
+     * @param OptionInterface $option
      *
-     * @return OrderItemOptionInterface
+     * @return OrderItemOptionInterface|$this
      */
     public function setOption(OptionInterface $option = null);
 
     /**
      * Returns the option.
      *
-     * @return \Ekyna\Component\Sale\Product\OptionInterface
+     * @return OptionInterface
      */
     public function getOption();
 }

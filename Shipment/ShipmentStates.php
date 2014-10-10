@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale\Shipment;
 
 /**
- * ShipmentStates.
- *
+ * Class ShipmentStates
+ * @package Ekyna\Component\Sale\Shipment
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 final class ShipmentStates
@@ -16,4 +16,22 @@ final class ShipmentStates
     const STATE_SHIPPED    = 'shipped';
     const STATE_RETURNED   = 'returned';
     const STATE_CANCELLED  = 'cancelled';
+
+    /**
+     * Returns the valid states.
+     *
+     * @return array
+     */
+    public static function getStates()
+    {
+        return array(
+            self::STATE_CHECKOUT,
+            self::STATE_ONHOLD,
+            self::STATE_PENDING,
+            self::STATE_READY,
+            self::STATE_SHIPPED,
+            self::STATE_RETURNED,
+            self::STATE_CANCELLED,
+        );
+    }
 }
