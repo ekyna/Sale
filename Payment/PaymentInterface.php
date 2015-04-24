@@ -7,7 +7,7 @@ namespace Ekyna\Component\Sale\Payment;
  * @package Ekyna\Component\Sale\Payment
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface PaymentInterface
+interface PaymentInterface extends \ArrayAccess, \IteratorAggregate
 {
     /**
      * Returns the identifier.
@@ -78,11 +78,11 @@ interface PaymentInterface
     /**
      * Sets the details.
      *
-     * @param array $details
+     * @param array|\Traversable $details
      *
      * @return PaymentInterface|$this
      */
-    public function setDetails(array $details);
+    public function setDetails($details);
 
     /**
      * Returns the details.
