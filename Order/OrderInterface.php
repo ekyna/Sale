@@ -2,6 +2,7 @@
 
 namespace Ekyna\Component\Sale\Order;
 
+use Ekyna\Bundle\CoreBundle\Model\TimestampableInterface;
 use Ekyna\Bundle\UserBundle\Model\AddressInterface;
 use Ekyna\Bundle\UserBundle\Model\UserInterface;
 
@@ -10,7 +11,7 @@ use Ekyna\Bundle\UserBundle\Model\UserInterface;
  * @package Ekyna\Component\Sale\Order
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface OrderInterface
+interface OrderInterface extends TimestampableInterface
 {
     /**
      * Update flag to trigger doctrine update event listener.
@@ -43,7 +44,7 @@ interface OrderInterface
      * Sets the items count.
      *
      * @param integer $count
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @return OrderInterface|$this
      */
     public function setItemsCount($count);
 
@@ -58,7 +59,7 @@ interface OrderInterface
      * Sets the total weight.
      *
      * @param integer $weight
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @return OrderInterface|$this
      */
     public function setTotalWeight($weight);
 
@@ -73,7 +74,8 @@ interface OrderInterface
      * Sets the currency.
      *
      * @param string $currency
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @return OrderInterface|$this
+     * @deprecated Relevant to payments
      */
     public function setCurrency($currency);
 
@@ -81,6 +83,7 @@ interface OrderInterface
      * Returns the currency.
      *
      * @return string
+     * @deprecated Relevant to payments
      */
     public function getCurrency();
 
@@ -88,7 +91,7 @@ interface OrderInterface
      * Sets the "all taxes excluded" total.
      *
      * @param float $netTotal
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @return OrderInterface|$this
      */
     public function setNetTotal($netTotal);
 
@@ -103,7 +106,7 @@ interface OrderInterface
      * Sets the "all taxes included" total.
      *
      * @param float $atiTotal
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @return OrderInterface|$this
      */
     public function setAtiTotal($atiTotal);
 
@@ -221,7 +224,7 @@ interface OrderInterface
      * Sets the "completed at" datetime.
      *
      * @param \DateTime $completedAt
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @return OrderInterface|$this
      */
     public function setCompletedAt(\DateTime $completedAt = null);
 
@@ -233,40 +236,10 @@ interface OrderInterface
     public function getCompletedAt();
 
     /**
-     * Sets the "created at" datetime.
-     *
-     * @param \DateTime $createdAt
-     * @return OrderInterface|$this
-     */
-    public function setCreatedAt(\DateTime $createdAt);
-
-    /**
-     * Returns the "created at" datetime.
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt();
-
-    /**
-     * Sets the "updated at" datetime.
-     *
-     * @param \DateTime $updatedAt
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
-     */
-    public function setUpdatedAt(\DateTime $updatedAt = null);
-
-    /**
-     * Returns the "updated at" datetime.
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt();
-
-    /**
      * Sets the "deleted at" datetime.
      *
      * @param \DateTime $deletedAt
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @return OrderInterface|$this
      */
     public function setDeletedAt(\DateTime $deletedAt = null);
 
@@ -280,7 +253,7 @@ interface OrderInterface
     /**
      * Returns whether the order has the given item or not.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderItemInterface $orderItem
+     * @param OrderItemInterface $orderItem
      * @return boolean
      */
     public function hasItem(OrderItemInterface $orderItem);
@@ -289,7 +262,6 @@ interface OrderInterface
      * Adds an item.
      *
      * @param OrderItemInterface $orderItem
-     *
      * @return OrderInterface|$this
      */
     public function addItem(OrderItemInterface $orderItem);
@@ -323,7 +295,7 @@ interface OrderInterface
     /**
      * Returns whether the order has the given payment or not.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderPaymentInterface $orderPayment
+     * @param OrderPaymentInterface $orderPayment
      * @return boolean
      */
     public function hasPayment(OrderPaymentInterface $orderPayment);
@@ -331,9 +303,8 @@ interface OrderInterface
     /**
      * Adds a payment.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderPaymentInterface $orderPayment
-     *
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @param OrderPaymentInterface $orderPayment
+     * @return OrderInterface|$this
      */
     public function addPayment(OrderPaymentInterface $orderPayment);
 
@@ -347,14 +318,14 @@ interface OrderInterface
     /**
      * Returns the payments.
      * 
-     * @return \Doctrine\Common\Collections\ArrayCollection|\Ekyna\Component\Sale\Payment\PaymentInterface[]
+     * @return \Doctrine\Common\Collections\ArrayCollection|OrderPaymentInterface[]
      */
     public function getPayments();
 
     /**
      * Returns whether the order has the given shipment or not.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderShipmentInterface $orderShipment
+     * @param OrderShipmentInterface $orderShipment
      * @return boolean
      */
     public function hasShipment(OrderShipmentInterface $orderShipment);
@@ -362,67 +333,67 @@ interface OrderInterface
     /**
      * Adds a shipment.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderShipmentInterface $orderShipment
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @param OrderShipmentInterface $orderShipment
+     * @return OrderInterface|$this
      */
     public function addShipment(OrderShipmentInterface $orderShipment);
 
     /**
      * Removes the shipment.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderShipmentInterface $orderShipment
+     * @param OrderShipmentInterface $orderShipment
      */
     public function removeShipment(OrderShipmentInterface $orderShipment);
 
     /**
      * Returns the shipments.
      * 
-     * @return \Doctrine\Common\Collections\ArrayCollection|\Ekyna\Component\Sale\Shipment\ShipmentInterface[]
+     * @return \Doctrine\Common\Collections\ArrayCollection|OrderShipmentInterface[]
      */
     public function getShipments();
 
     /**
      * Returns the user.
      *
-     * @return \Ekyna\Bundle\UserBundle\Model\UserInterface
+     * @return UserInterface
      */
     public function getUser();
 
     /**
      * Sets the user.
      *
-     * @param \Ekyna\Bundle\UserBundle\Model\UserInterface $user
-     * @return mixed
+     * @param UserInterface $user
+     * @return OrderInterface|$this
      */
     public function setUser(UserInterface $user = null);
 
     /**
      * Sets the invoice address.
      *
-     * @param \Ekyna\Bundle\UserBundle\Model\AddressInterface $address
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @param AddressInterface $address
+     * @return OrderInterface|$this
      */
     public function setInvoiceAddress(AddressInterface $address = null);
 
     /**
      * Returns the invoice address.
      *
-     * @return \Ekyna\Bundle\UserBundle\Model\AddressInterface
+     * @return AddressInterface
      */
     public function getInvoiceAddress();
 
     /**
      * Sets the delivery address.
      *
-     * @param \Ekyna\Bundle\UserBundle\Model\AddressInterface $address
-     * @return \Ekyna\Bundle\OrderBundle\Entity\Order
+     * @param AddressInterface $address
+     * @return OrderInterface|$this
      */
     public function setDeliveryAddress(AddressInterface $address = null);
 
     /**
      * Returns the delivery address.
      *
-     * @return \Ekyna\Bundle\UserBundle\Model\AddressInterface
+     * @return AddressInterface
      */
     public function getDeliveryAddress();
 }

@@ -17,6 +17,21 @@ interface PaymentInterface extends \ArrayAccess, \IteratorAggregate
     public function getId();
 
     /**
+     * Sets the method.
+     *
+     * @param MethodInterface $gateway
+     * @return PaymentInterface|$this
+     */
+    public function setMethod(MethodInterface $gateway);
+
+    /**
+     * Returns the method.
+     *
+     * @return MethodInterface
+     */
+    public function getMethod();
+
+    /**
      * Sets the amount.
      *
      * @param float $amount
@@ -59,21 +74,6 @@ interface PaymentInterface extends \ArrayAccess, \IteratorAggregate
      * @return string
      */
     public function getState();
-
-    /**
-     * Sets the method.
-     *
-     * @param string $method
-     * @return PaymentInterface|$this
-     */
-    public function setMethod($method);
-
-    /**
-     * Returns the method.
-     * 
-     * @return string
-     */
-    public function getMethod();
 
     /**
      * Sets the details.

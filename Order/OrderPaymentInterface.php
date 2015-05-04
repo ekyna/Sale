@@ -12,13 +12,6 @@ use Ekyna\Component\Sale\Payment\PaymentInterface;
 interface OrderPaymentInterface extends PaymentInterface
 {
     /**
-     * Returns the identifier.
-     * 
-     * @return integer
-     */
-    public function getId();
-
-    /**
      * Sets the order.
      *
      * @param OrderInterface $order

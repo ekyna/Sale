@@ -18,24 +18,4 @@ final class PaymentStates
     const STATE_CANCELLED  = 'cancelled';
     const STATE_REFUNDED   = 'refunded';
     const STATE_UNKNOWN    = 'unknown';
-
-    /**
-     * Returns the valid states.
-     *
-     * @return array
-     */
-    public static function getStates()
-    {
-        return array(
-            self::STATE_NEW,
-            self::STATE_PENDING,
-            self::STATE_PROCESSING,
-            self::STATE_CANCELLED,
-            self::STATE_FAILED,
-            self::STATE_AUTHORIZED,
-            self::STATE_COMPLETED,
-            self::STATE_REFUNDED,
-            self::STATE_UNKNOWN,
-        );
-    }
 }
