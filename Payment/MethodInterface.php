@@ -2,12 +2,17 @@
 
 namespace Ekyna\Component\Sale\Payment;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Ekyna\Bundle\CmsBundle\Model\ImageSubjectInterface;
+use Ekyna\Bundle\CoreBundle\Model\TimestampableInterface;
+use Ekyna\Bundle\PaymentBundle\Entity\Message;
+
 /**
  * Interface MethodInterface
  * @package Ekyna\Component\Sale\Payment
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface MethodInterface
+interface MethodInterface extends ImageSubjectInterface, TimestampableInterface
 {
     /**
      * Returns the identifier.
@@ -61,6 +66,60 @@ interface MethodInterface
     public function getConfig();
 
     /**
+     * Sets the description.
+     *
+     * @param string $description
+     * @return MethodInterface|$this
+     */
+    public function setDescription($description);
+
+    /**
+     * Returns the description.
+     *
+     * @return string
+     */
+    public function getDescription();
+
+    /**
+     * Sets the messages.
+     *
+     * @param ArrayCollection $messages
+     * @return MethodInterface|$this
+     */
+    public function setMessages(ArrayCollection $messages);
+
+    /**
+     * Returns whether the method as the message or not.
+     *
+     * @param Message $message
+     * @return bool
+     */
+    public function hasMessage(Message $message);
+
+    /**
+     * Adds the message.
+     *
+     * @param Message $message
+     * @return MethodInterface|$this
+     */
+    public function addMessage(Message $message);
+
+    /**
+     * Removes the message.
+     *
+     * @param Message $message
+     * @return MethodInterface|$this
+     */
+    public function removeMessage(Message $message);
+
+    /**
+     * Returns the messages.
+     *
+     * @return ArrayCollection
+     */
+    public function getMessages();
+
+    /**
      * Sets the enabled.
      *
      * @param boolean $enabled
@@ -74,4 +133,19 @@ interface MethodInterface
      * @return boolean
      */
     public function getEnabled();
+
+    /**
+     * Sets the createdAt.
+     *
+     * @param \DateTime $createdAt
+     * @return MethodInterface|$this
+     */
+    public function setCreatedAt(\DateTime $createdAt);
+
+    /**
+     * Returns the createdAt.
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt();
 }
