@@ -3,8 +3,8 @@
 namespace Ekyna\Component\Sale\Payment;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Ekyna\Bundle\CmsBundle\Model\ImageSubjectInterface;
 use Ekyna\Bundle\CoreBundle\Model\TimestampableInterface;
+use Ekyna\Bundle\MediaBundle\Model\MediaSubjectInterface;
 use Ekyna\Bundle\PaymentBundle\Entity\Message;
 
 /**
@@ -12,7 +12,7 @@ use Ekyna\Bundle\PaymentBundle\Entity\Message;
  * @package Ekyna\Component\Sale\Payment
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface MethodInterface extends ImageSubjectInterface, TimestampableInterface
+interface MethodInterface extends MediaSubjectInterface, TimestampableInterface
 {
     /**
      * Returns the identifier.
