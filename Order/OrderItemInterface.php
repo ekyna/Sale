@@ -2,24 +2,94 @@
 
 namespace Ekyna\Component\Sale\Order;
 
-use Ekyna\Component\Sale\PriceableInterface;
-use Ekyna\Component\Sale\Product\ProductInterface;
-use Ekyna\Component\Sale\ReferenceableInterface;
-use Ekyna\Component\Sale\WeightableInterface;
+use Ekyna\Component\Sale;
 
 /**
  * Interface OrderItemInterface
  * @package Ekyna\Component\Sale\Order
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-interface OrderItemInterface extends PriceableInterface, ReferenceableInterface, WeightableInterface
+interface OrderItemInterface
 {
+    /**
+     * Sets the designation.
+     *
+     * @param string $designation
+     * @return OrderItemInterface|$this
+     */
+    public function setDesignation($designation);
+
+    /**
+     * Returns the designation.
+     *
+     * @return string
+     */
+    public function getDesignation();
+
+    /**
+     * Sets the reference.
+     *
+     * @param string $reference
+     * @return OrderItemInterface|$this
+     */
+    public function setReference($reference);
+
+    /**
+     * Returns the reference.
+     *
+     * @return string
+     */
+    public function getReference();
+
+    /**
+     * Sets the base price.
+     *
+     * @param number $price
+     * @return OrderItemInterface|$this
+     */
+    public function setPrice($price);
+
+    /**
+     * Returns the base price.
+     *
+     * @return float
+     */
+    public function getPrice();
+
+    /**
+     * Sets the tax.
+     *
+     * @param Sale\Tax\TaxInterface $tax
+     * @return OrderItemInterface|$this
+     */
+    public function setTax(Sale\Tax\TaxInterface $tax = null);
+
+    /**
+     * Returns the tax.
+     *
+     * @return Sale\Tax\TaxInterface
+     */
+    public function getTax();
+
+    /**
+     * Sets the weight.
+     *
+     * @param float $weight
+     * @return OrderItemInterface|$this
+     */
+    public function setWeight($weight);
+
+    /**
+     * Returns the weight.
+     *
+     * @return float
+     */
+    public function getWeight();
 
     /**
      * Sets the quantity.
      *
      * @param integer $quantity
-     *
      * @return OrderItemInterface|$this
      */
     public function setQuantity($quantity);
@@ -35,7 +105,6 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
      * Sets the position.
      *
      * @param integer $position
-     *
      * @return OrderItemInterface|$this
      */
     public function setPosition($position);
@@ -50,8 +119,7 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     /**
      * Sets the order.
      *
-     * @param \Ekyna\Component\Sale\Order\OrderInterface $order
-     *
+     * @param OrderInterface $order
      * @return OrderItemInterface|$this
      */
     public function setOrder(OrderInterface $order = null);
@@ -64,141 +132,63 @@ interface OrderItemInterface extends PriceableInterface, ReferenceableInterface,
     public function getOrder();
 
     /**
-     * Sets the product.
-     *
-     * @param ProductInterface $product
-     *
-     * @return OrderItemInterface|$this
-     */
-    public function setProduct(ProductInterface $product = null);
-
-    /**
-     * Returns the product.
-     *
-     * @return \Ekyna\Component\Sale\Product\ProductInterface
-     */
-    public function getProduct();
-
-    /**
-     * Adds an option.
-     *
-     * @param OrderItemOptionInterface $option
-     *
-     * @return OrderItemInterface|$this
-     */
-    public function addOption(OrderItemOptionInterface $option);
-
-    /**
-     * Removes an option.
-     *
-     * @param OrderItemOptionInterface $option
-     */
-    public function removeOption(OrderItemOptionInterface $option);
-
-    /**
-     * Returns the options.
-     *
-     * @return \Doctrine\Common\Collections\ArrayCollection|OrderItemOptionInterface[]
-     */
-    public function getOptions();
-
-    /**
-     * Returns the options's identifiers.
-     * 
-     * @return array
-     */
-    public function getOptionsIds();
-
-    /**
-     * Returns whether the OrderItem equals the given OrderItem or not.
+     * Returns whether the current OrderItem equals the given OrderItem or not.
      * 
      * @param OrderItemInterface $orderItem
-     * 
      * @return boolean
      */
     public function equals(OrderItemInterface $orderItem);
 
     /**
-     * Merge quantity of the given OrderItem.
+     * Merges the given OrderItem.
+     *
+     * @param OrderItemInterface $orderItem
+     * @return OrderItemInterface|$this
      */
     public function merge(OrderItemInterface $orderItem);
 
     /**
-     * Sets the extra datas.
+     * Sets the subject type.
      *
-     * @param integer $extras
-     *
+     * @param string $subjectType
      * @return OrderItemInterface|$this
      */
-    public function setExtras($extras);
+    public function setSubjectType($subjectType);
 
     /**
-     * Returns the extra datas.
-     * 
+     * Returns the subject type.
+     *
+     * @return string
+     */
+    public function getSubjectType();
+
+    /**
+     * Sets the subject data.
+     *
+     * @param array $subjectData
+     * @return OrderItemInterface|$this
+     */
+    public function setSubjectData(array $subjectData);
+
+    /**
+     * Returns the subject data.
+     *
      * @return array
      */
-    public function getExtras();
+    public function getSubjectData();
 
     /**
-     * Returns the "all taxes excluded" price (including options)
+     * Sets the subject.
      *
-     * @return float
+     * @param object $subject
+     * @return OrderItemInterface|$this
      */
-    public function getBaseNetPrice();
+    public function setSubject($subject);
 
     /**
-     * Returns the "all taxes included" price (including options)
+     * Returns the subject.
      *
-     * @return float
+     * @return object
      */
-    public function getBaseAtiPrice();
-
-    /**
-     * Returns the tax amount (including options)
-     *
-     * @return float
-     */
-    public function getBaseTaxAmount();
-
-    /**
-     * Returns the weight (including options)
-     *
-     * @return float
-     */
-    public function getBaseWeight();
-
-    /**
-     * Returns the total "all taxes excluded" price.
-     *
-     * @return float
-     */
-    public function getTotalNetPrice();
-
-    /**
-     * Returns the total "all taxes included" price
-     *
-     * @return float
-     */
-    public function getTotalAtiPrice();
-
-    /**
-     * Returns the total tax amount
-     *
-     * @return float
-     */
-    public function getTotalTaxAmount();
-
-    /**
-     * Returns the total tax amount
-     *
-     * @return \Ekyna\Component\Sale\TaxesAmounts
-     */
-    public function getTotalTaxesAmounts();
-
-    /**
-     * Returns the total weight.
-     *
-     * @return float
-     */
-    public function getTotalWeight();
+    public function getSubject();
 }

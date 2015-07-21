@@ -21,11 +21,29 @@ interface OptionInterface extends PriceableInterface, ReferenceableInterface, We
     public function getId();
 
     /**
+     * Sets the product.
+     *
+     * @param ProductInterface $product
+     *
+     * @return OptionInterface|$this
+     */
+    public function setProduct(ProductInterface $product = null);
+
+    /**
      * Returns the product.
      *
      * @return ProductInterface
      */
     public function getProduct();
+
+    /**
+     * Sets the group.
+     *
+     * @param string $group
+     *
+     * @return OptionInterface|$this
+     */
+    public function setGroup($group);
 
     /**
      * Returns the group.

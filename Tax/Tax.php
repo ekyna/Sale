@@ -1,10 +1,10 @@
 <?php
 
-namespace Ekyna\Component\Sale;
+namespace Ekyna\Component\Sale\Tax;
 
 /**
  * Class Tax
- * @package Ekyna\Component\Sale
+ * @package Ekyna\Component\Sale\Tax
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 class Tax implements TaxInterface

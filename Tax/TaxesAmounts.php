@@ -1,13 +1,13 @@
 <?php
 
-namespace Ekyna\Component\Sale;
+namespace Ekyna\Component\Sale\Tax;
 
 /**
  * Class TaxesAmounts
- * @package Ekyna\Component\Sale
+ * @package Ekyna\Component\Sale\Tax
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
-class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
+class TaxesAmounts implements \ArrayAccess, \IteratorAggregate, \Countable
 {
     /**
      * @var array|TaxAmount[]
@@ -96,11 +96,19 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate
     }
 
     /**
-     * @return \ArrayIterator
+     * {@inheritdoc}
      */
     public function getIterator()
     {
         return new \ArrayIterator($this->taxes);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function count()
+    {
+        return count($this->taxes);
     }
 
     /**

@@ -2,6 +2,10 @@
 
 namespace Ekyna\Component\Sale;
 
+use Ekyna\Component\Sale\Tax\TaxInterface;
+use Ekyna\Component\Sale\Tax\TaxesAmounts;
+use Ekyna\Component\Sale\Tax\TaxAmount;
+
 /**
  * Class PriceableTrait
  * @package Ekyna\Component\Sale
@@ -28,7 +32,7 @@ trait PriceableTrait
 	 * 
      * @param number $price
      * 
-     * @return \Ekyna\Component\Sale\PriceableInterface|$this
+     * @return PriceableInterface|$this
      */
     public function setPrice($price)
     {
@@ -80,7 +84,7 @@ trait PriceableTrait
     /**
      * Returns the taxes amounts.
      *
-     * @return \Ekyna\Component\Sale\TaxesAmounts
+     * @return TaxesAmounts
      */
     public function getTaxesAmounts()
     {
@@ -92,9 +96,9 @@ trait PriceableTrait
 	/**
 	 * Sets the tax.
 	 * 
-     * @param \Ekyna\Component\Sale\TaxInterface $tax
+     * @param TaxInterface $tax
      * 
-     * @return \Ekyna\Component\Sale\PriceableInterface|$this
+     * @return PriceableInterface|$this
      */
     public function setTax(TaxInterface $tax)
     {
@@ -106,7 +110,7 @@ trait PriceableTrait
 	/**
 	 * Returns the tax.
 	 * 
-     * @return \Ekyna\Component\Sale\TaxInterface
+     * @return TaxInterface
      */
     public function getTax()
     {

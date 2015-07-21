@@ -2,6 +2,8 @@
 
 namespace Ekyna\Component\Sale;
 
+use Ekyna\Component\Sale\Tax\TaxInterface;
+
 /**
  * Interface PriceableInterface
  * @package Ekyna\Component\Sale
@@ -14,7 +16,7 @@ interface PriceableInterface
      *
      * @param number $price
      *
-     * @return \Ekyna\Component\Sale\PriceableInterface|$this
+     * @return PriceableInterface|$this
      */
     public function setPrice($price);
 
@@ -56,9 +58,9 @@ interface PriceableInterface
     /**
      * Sets the tax.
      *
-     * @param \Ekyna\Component\Sale\TaxInterface $tax
+     * @param \Ekyna\Component\Sale\Tax\TaxInterface $tax
      *
-     * @return \Ekyna\Component\Sale\PriceableInterface|$this
+     * @return PriceableInterface|$this
      */
     public function setTax(TaxInterface $tax);
 

@@ -26,6 +26,14 @@ interface OrderInterface extends TimestampableInterface
     public function getId();
 
     /**
+     * Sets the number.
+     *
+     * @param $number
+     * @return OrderInterface|$this
+     */
+    public function setNumber($number);
+
+    /**
      * Returns the number.
      *
      * @return string
@@ -33,12 +41,79 @@ interface OrderInterface extends TimestampableInterface
     public function getNumber();
 
     /**
-     * Sets the number.
+     * Sets the key.
      *
-     * @param $number
+     * @param string $key
      * @return OrderInterface|$this
      */
-    public function setNumber($number);
+    public function setKey($key);
+
+    /**
+     * Returns the key.
+     *
+     * @return string
+     */
+    public function getKey();
+
+    /**
+     * Sets the gender.
+     *
+     * @param string $gender
+     * @return OrderInterface|$this
+     */
+    public function setGender($gender);
+
+    /**
+     * Returns the gender.
+     *
+     * @return string
+     */
+    public function getGender();
+
+    /**
+     * Sets the first name.
+     *
+     * @param string $firstName
+     * @return OrderInterface|$this
+     */
+    public function setFirstName($firstName);
+
+    /**
+     * Returns the first name.
+     *
+     * @return string
+     */
+    public function getFirstName();
+
+    /**
+     * Sets the last name.
+     *
+     * @param string $lastName
+     * @return OrderInterface|$this
+     */
+    public function setLastName($lastName);
+
+    /**
+     * Returns the last name.
+     *
+     * @return string
+     */
+    public function getLastName();
+
+    /**
+     * Sets the email.
+     *
+     * @param string $email
+     * @return OrderInterface|$this
+     */
+    public function setEmail($email);
+
+    /**
+     * Returns the email.
+     *
+     * @return string
+     */
+    public function getEmail();
 
     /**
      * Sets the items count.
@@ -116,13 +191,6 @@ interface OrderInterface extends TimestampableInterface
      * @return float
      */
     public function getAtiTotal();
-
-    /**
-     * Returns the taxes amounts.
-     *
-     * @return \Ekyna\Component\Sale\TaxesAmounts
-     */
-    public function getTaxesAmounts();
 
     /**
      * Returns the all taxes excluded shipping cost.
@@ -396,4 +464,19 @@ interface OrderInterface extends TimestampableInterface
      * @return AddressInterface
      */
     public function getDeliveryAddress();
+
+    /**
+     * Sets whether to use the same address for delivery or not.
+     *
+     * @param boolean $sameAddress
+     * @return OrderInterface|$this
+     */
+    public function setSameAddress($sameAddress);
+
+    /**
+     * Returns whether to use the same address for delivery.
+     *
+     * @return boolean
+     */
+    public function getSameAddress();
 }

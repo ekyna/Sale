@@ -1,10 +1,10 @@
 <?php
 
-namespace Ekyna\Component\Sale;
+namespace Ekyna\Component\Sale\Tax;
 
 /**
  * Class TaxAmount
- * @package Ekyna\Component\Sale
+ * @package Ekyna\Component\Sale\Tax
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 class TaxAmount
@@ -34,7 +34,7 @@ class TaxAmount
     /**
      * Returns the tax.
      * 
-     * @return \Ekyna\Component\Sale\TaxInterface
+     * @return \Ekyna\Component\Sale\Tax\TaxInterface
      */
     public function getTax()
     {

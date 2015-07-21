@@ -35,6 +35,13 @@ interface ProductInterface extends PriceableInterface, ReferenceableInterface, W
     public function getOptions();
 
     /**
+     * Returns whether the product has options or not.
+     *
+     * @return boolean
+     */
+    public function hasOptions();
+
+    /**
      * Returns the options's groups.
      * 
      * @return array
