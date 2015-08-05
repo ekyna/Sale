@@ -319,6 +319,14 @@ interface OrderInterface extends TimestampableInterface
     public function getDeletedAt();
 
     /**
+     * Sets the items.
+     *
+     * @param \Doctrine\Common\Collections\ArrayCollection|OrderItemInterface[] $items
+     * @return OrderInterface|$this
+     */
+    public function setItems($items);
+
+    /**
      * Returns whether the order has the given item or not.
      *
      * @param OrderItemInterface $orderItem
@@ -361,6 +369,14 @@ interface OrderInterface extends TimestampableInterface
     public function isEmpty();
 
     /**
+     * Sets the payments.
+     *
+     * @param \Doctrine\Common\Collections\ArrayCollection|OrderPaymentInterface[] $payments
+     * @return OrderInterface|$this
+     */
+    public function setPayments($payments);
+
+    /**
      * Returns whether the order has the given payment or not.
      *
      * @param OrderPaymentInterface $orderPayment
@@ -391,6 +407,21 @@ interface OrderInterface extends TimestampableInterface
     public function getPayments();
 
     /**
+     * Finds the payment by his id.
+     * @param int $paymentId
+     * @return OrderPaymentInterface|null
+     */
+    public function findPaymentById($paymentId);
+
+    /**
+     * Sets the shipments.
+     *
+     * @param \Doctrine\Common\Collections\ArrayCollection|OrderShipmentInterface[] $shipments
+     * @return OrderInterface|$this
+     */
+    public function setShipments($shipments);
+
+    /**
      * Returns whether the order has the given shipment or not.
      *
      * @param OrderShipmentInterface $orderShipment
@@ -419,6 +450,14 @@ interface OrderInterface extends TimestampableInterface
      * @return \Doctrine\Common\Collections\ArrayCollection|OrderShipmentInterface[]
      */
     public function getShipments();
+
+    /**
+     * Finds the shipment by his id.
+     *
+     * @param int $shipmentId
+     * @return OrderShipmentInterface|null
+     */
+    public function findShipmentById($shipmentId);
 
     /**
      * Returns the user.
