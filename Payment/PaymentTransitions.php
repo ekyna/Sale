@@ -25,12 +25,12 @@ final class PaymentTransitions
      */
     static public function getManualTransitions()
     {
-        return array(
+        return [
             PaymentTransitions::TRANSITION_CANCEL,
             PaymentTransitions::TRANSITION_FAIL,
             PaymentTransitions::TRANSITION_AUTHORIZE,
             PaymentTransitions::TRANSITION_COMPLETE,
             PaymentTransitions::TRANSITION_REFUND,
-        );
+        ];
     }
 }

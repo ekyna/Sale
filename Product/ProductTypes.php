@@ -31,10 +31,10 @@ final class ProductTypes
      */
     public static function getChoices()
     {
-        return array(
+        return [
             self::PHYSICAL     => 'ekyna_product.type.'.self::PHYSICAL,
             self::VIRTUAL      => 'ekyna_product.type.'.self::VIRTUAL,
             self::DOWNLOADABLE => 'ekyna_product.type.'.self::DOWNLOADABLE,
-        );
+        ];
     }
 }

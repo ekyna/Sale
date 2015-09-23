@@ -24,7 +24,7 @@ class TaxesAmounts implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function __construct()
     {
-        $this->taxes = array();
+        $this->taxes = [];
         $this->total = 0;
     }
 
